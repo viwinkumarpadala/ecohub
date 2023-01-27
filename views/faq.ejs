@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+
+
+  <link rel="stylesheet" href="/FAQcss.css" />
+
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+  <!--===============================================================================================-->
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css" />
+  <!--===============================================================================================-->
+
+  <title>FAQ's page.</title>
+
+  <header>
+    <%- include("./partials/navbar-loggedin.ejs") %>
+  </header>
+
+  <link rel="shortcut icon" href="/Animated Leaf Icon final.jpg" type="image/x-icon">
+
+  <script>
+    function validateForm() {
+      var email = document.getElementById("email").value;
+      if (email == "") {
+        window.alert("Email cannot be empty");
+        return false;
+      } else {
+        var re =
+          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (!re.test(email)) {
+          window.alert(
+            "Email format invalid"
+          );
+          return false;
+        }
+        else{
+          //success
+          window.open("/success-mail", __self);
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+  <div class="mainTitle">See the Frequently asked questions here:</div>
+
+  <br />
+  <div class="container faqBox">
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed faqQuestion" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            Why ECOHUB?
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body faqAnswer">
+            ECOHUB itself is the idea which ponders on the pure electric-ness
+            of the world, which primarily indicates go green!
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+          <button class="accordion-button collapsed faqQuestion" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            What is our aim?
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body faqAnswer">
+            Our aim is to enhance the usage of green products and to bring out
+            much colour to our life.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+          <button class="accordion-button collapsed faqQuestion" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            How are we different from others?
+          </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body faqAnswer">
+            We are a lot different when compared to others, could be idea,
+            could be the implementation of the idea, we strive to be unique
+            from the rest of our competitors.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact1" id="FAQ_contactUs">
+    <div class="container-contact1">
+      <div class="contact1-pic js-tilt" data-tilt>
+        <img src="/Mail Green.png" alt="IMG" />
+      </div>
+
+      <form class="contact1-form validate-form" autocomplete="off" method="post" action="/con/message">
+        <span class="contact1-form-title"> Try contacting us </span>
+
+        <div class="wrap-input1 validate-input" data-validate="Name is required">
+          <input class="input1" type="text" name="name" placeholder="Name" id="name" value = "<%= user.username %> " required />
+          <span class="shadow-input1"></span>
+        </div>
+
+        <div class="wrap-input1 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+          <input class="input1" type="email" name="email" placeholder="Email" id="email" required value="<%= user.email %> "/>
+          <span class="shadow-input1"></span>
+        </div>
+
+        <div class="wrap-input1 validate-input" data-validate="Subject is required">
+          <input class="input1" type="text" name="subject" placeholder="Subject" id="subject" required />
+          <span class="shadow-input1"></span>
+        </div>
+
+        <div class="wrap-input1 validate-input" data-validate="Message is required">
+          <textarea class="input1" name="message" placeholder="Message" id="message" required></textarea>
+          <span class="shadow-input1"></span>
+        </div>
+
+        <div class="container-contact1-form-btn">
+          <button class="contact1-form-btn" onclick="validateForm()">
+            <span>
+              Send Email
+              <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="/Cartstyle.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+</head>
+
+<body>
+
+    
+    <script src="/js/Cartscript.js"></script>
+    
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <h2 class="section-header"><a href="/user-profile" class="a1"><%= user.username %>'s'</a> CART</h2>
+    <div class="cart-row">
+        <span class="cart-item cart-header cart-column">ITEM</span>
+        <span class="cart-price cart-header cart-column">PRICE</span>
+        <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+    </div>
+    <div class="cart-items">
+        <% products.forEach(product => { %>   
+            <script>
+                // console.log(product.img_link);
+            </script>
+            <div class="cart-row">
+                <div class="cart-item cart-column">
+                    <!-- <img class="cart-item-image" src="<%= product.img_link %> " alt="<%= product.name %>" width="100" height="100"> -->
+                    <h1><%= product.img_link %> </h1>
+                    <span class="cart-item-title"> <%= product.name %> </span>
+                </div>
+                <span class="cart-price cart-column">₹<%= product.d_price %></span>
+                <div class="cart-quantity cart-column">
+                    <input class="cart-quantity-input" type="number" value="1">
+                    <button class="btn btn-danger" type="button"> <a href="/remfromcart/<%=product._id%>" class="a2">REMOVE</a></button>
+                </div>
+            </div> 
+        <% }); %> 
+    <div class="cart-total">
+        <strong class="cart-total-title">Total</strong>
+        <span class="cart-total-price" id="finalPrice">₹0.00</span>
+    </div>
+    <button class="btn btn-primary btn-purchase" type="button"><a href="/emptythecart" style="text-decoration: none;"> PURCHASE</a></button>
+    </section>
+</body>
+
+</html>

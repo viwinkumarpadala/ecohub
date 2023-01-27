@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href='/ContactSM.css' rel='stylesheet' type='text/css' />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
+    rel="stylesheet" type="text/css" />
+
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+  <link rel="shortcut icon" href="/assets/Animated Leaf Icon final.jpg" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+
+  <title>Sales Manager.</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="shortcut icon" href="/Animated Leaf Icon final.jpg" type="image/x-icon">
+  
+  <script>
+    function documentValiation() {
+      let flag = true;
+      //email validation
+      var email = document.getElementById("email").value;
+      if (email == "") {
+        flag = false;
+        window.alert("Email cannot be empty");
+      } else {
+        if (!email.includes("@")) {
+          if (!(email.includes(".com") || email.includes(".in")))
+            flag = false;
+          window.alert("Email format invalid");
+        }
+      }
+
+      // phone number
+      var number = document.getElementById("phone").value;
+      var rePhoneNumber = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+      if (!rePhoneNumber.test(number)) {
+        flag = false;
+        window.alert("Phone number format invalid");
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  
+
+  <header>
+    <%- include("./partials/navbar-loggedin.ejs") %>
+  </header>
+  <div class="column left">
+    <h1 style="font-size: 1.5cm; padding-top: 20%;">Get a demo</h1>
+    <p class="p0">Fill in the following details: </p>
+    <form onsubmit="documentValiation()" method="post" action="/sm/message">
+      <input type="text" placeholder="Name" id="name" name="name" class="input" autocomplete="off" value= <%= user.username %> required>
+      <input type="text" placeholder="Your query here" id="query" name="query" class="input" autocomplete="off" required>
+      <input type="text" placeholder="Email" id="email" name="email" class="input" autocomplete="off" value= <%= user.email %> required>
+      <input type="text" placeholder="Phone" id="phone" name="phone" class="input" autocomplete="off" required value="<%= user.phone_number%>">
+      <br><br>
+      <button type="submit" class="submit">Submit</button>
+    </form>
+  </div>
+  <div class="column right" style=" background-color: #c5ead8">
+    <p class="p1">You can contact our highly trained marketing and sales agent regarding queries about not only electric
+      products and vehicles, but also services for electric products completely for free!</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="/guy.png" class="img">
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+            <h4>Mikkel Smith</h4>
+          </div>
+          <h5>Sales Manager</h5>
+        </div>
+      </div>
+    </div>
+    <p class="p2">Make sure you ask all your doubts now and here and Welcome to the world of ECOHUB! 💖</p>
+  </div>
+
+</body>
+
+</html>

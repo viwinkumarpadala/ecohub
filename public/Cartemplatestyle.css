@@ -1,0 +1,57 @@
+/* car-detail page */
+#car-detail {
+    margin-top: 60px;
+}
+
+
+.card {
+    margin-bottom: 30px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid transparent;
+    border-radius: 0;
+    border-color: black;
+}
+
+.card .card-subtitle {
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: #8898aa;
+}
+
+.table-product.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f3f8fa !important
+}
+
+.table-product td {
+    border-top: 0px solid #dee2e6 !important;
+    color: #728299 !important;
+}
+
+
+.class{
+    font-size: 40px;
+    background-color: peachpuff;
+    color: saddlebrown;
+}
+
+/* car-detail page */
+
+.content{
+    margin-left: 20px;
+}
+
+img {
+    height: 400px;
+    width: 400px;
+    vertical-align: middle;
+    border-style: none;
+}

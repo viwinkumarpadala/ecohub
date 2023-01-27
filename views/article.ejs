@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
+    rel="stylesheet" type="text/css" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet" />
+
+  <link rel="shortcut icon" href="/Animated Leaf Icon final.jpg" type="image/x-icon" />
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css" />
+
+  <title>Articles.</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+
+  <link rel="stylesheet" type="text/css" href="/ArticleCSS.css" />
+</head>
+
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <header>
+    <%- include("./partials/navbar-loggedin.ejs") %>
+  </header>
+
+  <br>
+  <div class="container-md-fluid">
+    <div class="row">
+      <div class="col-10">
+        <p class="mainHeading">
+          Subscribe to our newsletter? Get the news delivered to you right now
+          at your mail?
+        </p>
+      </div>
+      <div class="col-2">
+        <div class="form-group">
+          <div class="checkbox checbox-switch switch-primary">
+            <label>
+              <input type="checkbox" name="" />
+              <span></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 articleBox">
+        <h2>Maruti Launches new electric cars and bikes in the industry.</h2>
+        <div id="summary">
+          <p class="collapse articleText" id="collapseSummary1">
+            Suzuki Motor, parent of India's largest automaker Maruti Suzuki, announced on Sunday that it would invest Rs
+            10,440 crore to build a new electric car and battery factory in India. Maruti Suzuki, which sells one in
+            every two cars on Indian roads, is expecting to roll out affordable EV models in both Japan and India as
+            early as 2025. The Japanese automaker intends to invest around Rs 3,000 crore for the new plant to increase
+            production of electric vehicles in India, and Rs 7,300 crore to manufacture electric batteries. Sunday's
+            announcement is the first firm commitment on electrification by India's largest carmaker, which has
+            maintained that the Indian market isn't ready for EV sales yet.
+          </p>
+          <a class="collapsed" data-toggle="collapse" href="#collapseSummary1" aria-expanded="false"
+            aria-controls="collapseSummary"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 articleBox">
+        <h2>Home Electrification Innovator SPAN Raises $90 Million in Series B to Accelerate Next Generation of EV Charging.</h2>
+        <div id="summary">
+          <p class="collapse articleText" id="collapseSummary2">
+            SPAN, an innovator in the home energy management space, is led by a seasoned team of executives and
+            engineers from Tesla, Sunrun, and Amazon. With its flagship product the SPAN smart electrical panel, the
+            Company recently celebrated wins for “Best Home Technology Product” and “Best Energy Efficient Product” at
+            the NAHB International Builders' Show® 2022 Best of IBS Awards. Fast Company also named SPAN one of their
+            2022 “World's Most Innovative Companies.”
+
+            “We started with reinventing the electrical panel, as it is the core component to any scalable path to
+            electrification of homes, but the consumer experience demands more,” says Arch Rao, CEO and founder of SPAN.
+            “We're excited to deploy this new capital to expand our product offerings that simplify the decarbonization
+            of homes, and to continue developing the unparalleled approach to home energy management that SPAN is
+            uniquely positioned to deliver.”
+          </p>
+          <a class="collapsed" data-toggle="collapse" href="#collapseSummary2" aria-expanded="false"
+            aria-controls="collapseSummary"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="bg-light pb-5">
+    <div class="container text-center">
+      <p class="font-italic text-muted mb-0">
+        &copy; Ecohub.com All rights reserved.
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>

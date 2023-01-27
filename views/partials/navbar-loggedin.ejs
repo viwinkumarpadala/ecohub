@@ -1,0 +1,44 @@
+<!-- 
+  
+  This is the navbar which is for the users after logged in which has an dropdown element 
+  instead of Join Us button as in the default navbar
+  and this navbar displays the information about the user after logged in like user.username, etc.
+
+ -->
+
+<nav class="navbar navbar-expand-lg navbar-dark defaultNavbar">
+  <a class="navbar-brand" href="/home">ECOHUB</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/home#services">Our services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/FAQ">FAQ's</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/FAQ#FAQ_contactUs">Contact us</a>
+      </li>
+      <li class="dropdown">
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle user-action"><img
+            src="<%= user.img_url %>"
+            class="avatar" alt="Avatar"> <%= user.username %>   <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="/user-profile"><i class="fa fa-user-o"></i> Profile</a></li>
+          <li><a href="/show-cart"><i class="fa fa-shopping-cart"></i> Your Cart</a></li>
+          <li><a href="/update-profile"><i class="fa fa-sliders"></i> Settings</a></li>
+          <li class="divider"></li>
+          <li><a href="/"><i class="fas fa-door-open"></i> Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+
+  </div>
+</nav>

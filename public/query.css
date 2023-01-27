@@ -1,0 +1,55 @@
+.container1{
+  margin-top: 100px;
+  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.container2{
+    margin-top: 80px;
+}
+
+.lineUp {
+  animation: 2s anim-lineUp ease-out;
+}
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.text{
+    color: grey;
+    text-align: center;
+}
+
+.link{
+    text-decoration: none;
+    color: grey;    
+}
+
+.link:hover{
+    color: greenyellow;
+}
